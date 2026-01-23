@@ -1,27 +1,27 @@
-# name: HIFITI-Auto-Checkin
+name: HIFITI-Auto-Checkin
 
-# on:
-#   workflow_dispatch:
-#   schedule:
-#     # UTC
-#     - cron: "0 12 * * 0,1,3,5"
-#     - cron: "0 13 * * 2,4,6"
-# jobs:
-#   checkin:
-#     name: Checkin
-#     runs-on: ubuntu-latest
-#     env:
-#       ACCOUNTS: ${{ secrets.ACCOUNTS }}
+on:
+  workflow_dispatch:
+  schedule:
+    # UTC
+    - cron: "0 12 * * 0,1,3,5"
+    - cron: "0 13 * * 2,4,6"
+jobs:
+  checkin:
+    name: Checkin
+    runs-on: ubuntu-latest
+    env:
+      ACCOUNTS: ${{ secrets.ACCOUNTS }}
 
-#     steps:
-#       - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-#       - name: Use Node.js latest.
-#         uses: actions/setup-node@v4
-#         with:
-#           node-version: latest
+      - name: Use Node.js latest.
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
 
-#       - name: Checkin
-#         shell: bash
-#         run: |
-#           node main.js
+      - name: Checkin
+        shell: bash
+        run: |
+          node main.js
